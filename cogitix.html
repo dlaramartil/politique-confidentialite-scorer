@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Politique de confidentialité – Cogitix</title>
+  <meta name="description" content="Politique de confidentialité de l’application Cogitix." />
+  <meta property="og:title" content="Politique de confidentialité – Cogitix." />
+  <meta property="og:description" content="Cogitix. ne collecte aucune donnée personnelle. Aucun compte, aucun suivi, aucune publicité." />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="noindex,nofollow" />
+  <style>
+    :root{
+      --bg:#f4f5f7;          /* lightGray app */
+      --card:#ffffff;
+      --text:#111827;        /* near-black */
+      --muted:#6b7280;       /* gray-500 */
+      --primary:#ef4444;     /* red */
+      --accent:#22c55e;      /* green */
+      --yellow:#f59e0b;      /* yellow */
+      --blue:#3b82f6;        /* blue */
+      --radius:16px;
+      --shadow:0 6px 20px rgba(0,0,0,.08);
+    }
+    html,body{height:100%}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text); background:linear-gradient(160deg, var(--bg), #fff);
+    }
+    .wrap{max-width:880px; margin-inline:auto; padding:40px 20px}
+    .card{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:28px}
+    h1{font-size:clamp(1.6rem, 2.2vw, 2.2rem); margin:0 0 6px}
+    .subtitle{color:var(--muted); margin:0 0 22px}
+    h2{font-size:1.15rem; margin:28px 0 10px}
+    p{line-height:1.65; margin:0 0 14px}
+    ul{margin:0 0 14px 20px}
+    .pill{display:inline-flex; gap:8px; align-items:center; background:#fff; border-radius:999px; padding:8px 12px; border:1px solid #e5e7eb}
+    .swatch{width:10px; height:10px; border-radius:50%}
+    .row{display:flex; gap:8px; flex-wrap:wrap}
+    footer{margin-top:18px; color:var(--muted); font-size:.95rem}
+    .brand{
+      display:flex; align-items:center; gap:10px; margin-bottom:18px
+    }
+    .logo{width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg,var(--primary),var(--yellow),var(--accent),var(--blue)); box-shadow:inset 0 0 0 2px rgba(255,255,255,.6)}
+    .badges{display:flex; gap:8px; flex-wrap:wrap; margin:10px 0 0}
+    .muted{color:var(--muted)}
+    .small{font-size:.92rem}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Politique de confidentialité – Cogitix.</h1>
+          <p class="subtitle">Dernière mise à jour : <strong><span id="last-updated">[JJ/MM/AAAA]</span></strong></p>
+        </div>
+      </div>
+
+      <p>Cogitix. respecte votre vie privée. L’application ne collecte, ne stocke et ne partage aucune donnée personnelle.</p>
+
+      <h2>Collecte de données</h2>
+      <ul>
+        <li>Aucun compte utilisateur n’est requis.</li>
+        <li>Aucune information d’identification (nom, email, adresse, etc.) n’est demandée.</li>
+        <li>Aucun suivi publicitaire ou analytique n’est réalisé.</li>
+      </ul>
+
+      <h2>Utilisation et partage</h2>
+      <p>Puisqu’aucune donnée n’est collectée, aucune utilisation ou partage de données personnelles n’a lieu. Aucun transfert à des tiers.</p>
+
+      <h2>Stockage local</h2>
+      <p>Certains réglages (ex. préférences d’affichage) peuvent être enregistrés <em>localement</em> sur votre appareil. Ces informations ne quittent jamais votre appareil.</p>
+
+      <h2>Sécurité</h2>
+      <p>Bien que l’application ne traite pas de données personnelles, nous veillons à maintenir un haut niveau de fiabilité et de sécurité.</p>
+
+      <h2>Contact</h2>
+      <p>Pour toute question, contactez‑nous : <a href="mailto:dlaramartil@gmail.com">dlaramartil@gmail.com</a></p>
+
+      <div class="badges">
+        <span class="pill small"><span class="swatch" style="background:var(--primary)"></span>aucun compte</span>
+        <span class="pill small"><span class="swatch" style="background:var(--accent)"></span>aucune collecte</span>
+        <span class="pill small"><span class="swatch" style="background:var(--blue)"></span>pas de suivi</span>
+      </div>
+
+      <footer>
+        <p class="muted small">© <span id="year"></span> Yams Scorer. Tous droits réservés.</p>
+      </footer>
+    </section>
+  </main>
+  <script>
+    // Remplissage pratique de la date
+    (function(){
+      const e = document.getElementById('year');
+      const y = new Date().getFullYear();
+      if(e) e.textContent = y;
+      // Remplace automatiquement la date JJ/MM/AAAA si vous oubliez
+      const lu = document.getElementById('last-updated');
+      if(lu && lu.textContent.includes('[')){
+        const d = new Date();
+        lu.textContent = `${String(d.getDate()).padStart(2,'0')}/${String(d.getMonth()+1).padStart(2,'0')}/${d.getFullYear()}`;
+      }
+    })();
+  </script>
+</body>
+</html>
